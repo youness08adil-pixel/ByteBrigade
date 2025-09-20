@@ -25,7 +25,7 @@ export default async function Home() {
           Bienvenue au Club Byte Brigade
         </h1>
         <p className="max-w-xl mx-auto mt-8 text-base lg:text-xl text-secondary-foreground">
-          Le club informatique de l'ENSAS, où passion et technologie se rencontrent.
+          Le club informatique de l&apos;ENSAS, où passion et technologie se rencontrent.
         </p>
       </div>
 
@@ -80,7 +80,7 @@ export default async function Home() {
           Bienvenue au Club Byte Brigade
         </h1>
         <p className="max-w-xl mx-auto mt-8 text-base lg:text-xl text-secondary-foreground">
-          Le club informatique de l'ENSAS, où passion et technologie se rencontrent.
+          Le club informatique de l&apos;ENSAS, où passion et technologie se rencontrent.
         </p>
       </div>
 
