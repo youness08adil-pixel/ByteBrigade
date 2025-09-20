@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import prisma from "../lib/db";
