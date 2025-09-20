@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
 import { SubmitButton } from "@/app/components/Submitbuttons";
 import { Button } from "@/components/ui/button";
 import {
