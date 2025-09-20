@@ -11,11 +11,11 @@ export default async function Home() {
     
   
     return (
-    <section className="flex flex-col items-center justify-center bg-background h-[90vh] mt-40 ">
+<section className="flex flex-col items-center justify-center bg-background min-h-screen mt-20 md:mt-40">
   <div className="relative items-center w-full px-5 py-12 mx-auto lg:px-16 max-w-7xl md:px-12">
     <div className="max-w-3xl mx-auto text-center ">
       <div className="">
-        <span className="w-auto px-6 py-3 rounded-full bg-secondary ">
+<span className="w-auto px-4 py-2 rounded-full bg-secondary text-xs md:text-sm">
           <span className="text-sm font-medium text-primary ">
             Byte Brigade is now numerique
           </span>
@@ -32,7 +32,7 @@ export default async function Home() {
     </div>
 
     {/* === Transparent Cards Section === */}
-    <div className="mt-40 grid gap-8 sm:grid-cols-1 md:grid-cols-3">
+    <div className="mt-40 grid gap-8 sm:grid-cols-1 md:grid-cols-3 pb-20">
       {/* Card 1 */}
       <div className="p-6 bg-white/20 backdrop-blur-md rounded-2xl text-center flex flex-col items-center shadow-lg">
         <div className="text-4xl mb-4">🏆</div>
@@ -66,11 +66,11 @@ export default async function Home() {
   );
   }
   return (
-        <section className="flex flex-col items-center justify-center bg-background h-[90vh] mt-40 ">
+<section className="flex flex-col items-center justify-center bg-background min-h-screen mt-20 md:mt-40">
   <div className="relative items-center w-full px-5 py-12 mx-auto lg:px-16 max-w-7xl md:px-12">
     <div className="max-w-3xl mx-auto text-center ">
       <div className="">
-        <span className="w-auto px-6 py-3 rounded-full bg-secondary ">
+<span className="w-auto px-4 py-2 rounded-full bg-secondary text-xs md:text-sm">
           <span className="text-sm font-medium text-primary ">
             Byte Brigade is now numerique
           </span>
@@ -94,7 +94,7 @@ export default async function Home() {
     </div>
 
     {/* === Transparent Cards Section === */}
-    <div className=" grid gap-8 sm:grid-cols-1 md:grid-cols-3 mt-20 ">
+    <div className=" grid gap-8 sm:grid-cols-1 md:grid-cols-3 mt-20 pb-20">
       {/* Card 1 */}
       <div className="p-6 bg-white/20 backdrop-blur-md rounded-2xl text-center flex flex-col items-center shadow-lg">
         <div className="text-4xl mb-4">🏆</div>

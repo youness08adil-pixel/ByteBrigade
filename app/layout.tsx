@@ -7,8 +7,8 @@ import prisma from "./lib/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { unstable_noStore as noStore } from "next/cache";
 import { Linkedin, Instagram, Mail } from "lucide-react"
-import { redirect } from "next/dist/server/api-utils";
-import { redirect as redirectt } from "next/navigation";
+
+import { MobileNavbar } from "./components/MobileNavbar";
 
 
 
@@ -69,7 +69,7 @@ export default async function RootLayout({
 }>) {
   const { getUser, isAuthenticated } = getKindeServerSession();
   const user = await getUser();
-  
+  const authed = await isAuthenticated();
   const data = user? 
     await getData({
       email: user.email as string,
@@ -92,36 +92,41 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
           >
-          <Navbar />
+          {/* Desktop Navbar */}
+  <div className={!authed?"hidden md:block":""}>
+    <Navbar />
+  </div>
 
-          {data?.status==="SUSPENDED"?"You are suspended by now contact an admin":children}
-          <div className=" border-t bg-gray-50 dark:bg-gray-900 mt-20">
-  <div className="mx-auto max-w-6xl px-6 py-6 flex justify-between text-sm text-gray-600 dark:text-gray-400">
-    <span>© 2025 Byte Brigade – Tous droits réservés.</span>
+  {/* Mobile Navbar */}
+  {!authed&&(
+          <MobileNavbar isAuthenticated={authed} user={user} dbUser={data} />
+          )}
+
+
+  {data?.status === "SUSPENDED" 
+    ? "You are suspended by now contact an admin" 
+    : children}
+
+          <div className="border-t bg-gray-50 dark:bg-gray-900 mt-20">
+  <div className="mx-auto max-w-6xl px-6 py-6 flex flex-col md:flex-row md:justify-between items-center text-sm text-gray-600 dark:text-gray-400 gap-4">
+    <span className="text-center md:text-left">© 2025 Byte Brigade – Tous droits réservés.</span>
     <div className="flex flex-col items-center text-center gap-2">
       <div>Conçu avec ❤️ par le Club Informatique Byte Brigade</div>
-      <nav className="flex gap-4">
-        <a
-          href="https://www.linkedin.com/in/bytebrigade?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Linkedin />
+      <nav className="flex gap-6">
+        <a href="https://www.linkedin.com/in/bytebrigade..." target="_blank" rel="noopener noreferrer">
+          <Linkedin className="h-5 w-5" />
         </a>
-        <a
-          href="https://www.instagram.com/byte.brigade.club?igsh=djA4a2lydXVwenk0"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Instagram />
+        <a href="https://www.instagram.com/byte.brigade.club" target="_blank" rel="noopener noreferrer">
+          <Instagram className="h-5 w-5" />
         </a>
         <a href="mailto:bytebrigadeclub@gmail.com">
-          <Mail />
+          <Mail className="h-5 w-5" />
         </a>
       </nav>
     </div>
   </div>
 </div>
+
 
         </ThemeProvider>
       </body>
